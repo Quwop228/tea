@@ -96,12 +96,15 @@
             var slideW = slides[0].getBoundingClientRect().width;
             var sliderW = track.parentElement.getBoundingClientRect().width;
             var GAP = parseFloat(getComputedStyle(track).gap) || 16;
+            var EDGE = parseFloat(getComputedStyle(track.parentElement).getPropertyValue('--slider-edge')) || 0;
             var step = slideW + GAP;
             var x;
             if (idx === slides.length - 1) {
-                x = sliderW - (slides.length * slideW + (slides.length - 1) * GAP);
+                x = sliderW - EDGE - (slides.length * slideW + (slides.length - 1) * GAP);
+            } else if (idx === 0) {
+                x = EDGE;
             } else {
-                x = -idx * step;
+                x = -idx * step + EDGE;
             }
             track.style.transform = 'translateX(' + x + 'px)';
             for (var d = 0; d < dots.length; d++) {

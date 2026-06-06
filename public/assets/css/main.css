@@ -543,12 +543,13 @@ button { font-family: inherit; cursor: pointer; }
     .mobile-header .logo { font-size: 16px; letter-spacing: .18em; }
 
     .container { padding: 0 16px; }
-    .banner .container { padding: 0 0 0 16px; }      /* убираем правый паддинг ради peek */
+    .banner .container { padding: 0; }
     .banner { padding: 16px 0; }
-    .banner__slide { flex: 0 0 calc(100vw - 32px); } /* квадратный слайд 343 на viewport 375 */
+    .banner__slider { --slider-edge: 16px; }
+    .banner__slide { flex: 0 0 calc(100vw - 32px); }
     .banner__track { gap: 8px; }
     .banner__slider, .banner__card { border-radius: 16px; }
-    .banner__dots { left: calc((100vw - 32px) / 2); bottom: 8px; }   /* по центру слайда */
+    .banner__dots { left: 50%; bottom: 8px; }
     .banner__content { max-width: 100%; padding: 24px; z-index: 3; }
     .banner__card { min-height: 340px; }
     .banner__title { font-size: 32px; line-height: 32px; }
