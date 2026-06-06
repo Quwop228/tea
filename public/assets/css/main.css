@@ -383,7 +383,7 @@ button { font-family: inherit; cursor: pointer; }
     position: absolute;
     z-index: 3;
     bottom: 8px;
-    left: calc((100% - 40px) / 2);
+    left: 50%;
     transform: translateX(-50%);
     display: flex;
     align-items: center;
@@ -483,18 +483,18 @@ button { font-family: inherit; cursor: pointer; }
 
 .mobile-header { display: none; padding: 0 16px; }
 .mobile-header__btn {
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
     flex: 0 0 auto;
     border: none;
-    border-radius: 12px;
+    border-radius: 8px;
     background: #F4F4F4;
     padding: 0;
     overflow: hidden;
     display: grid;
     place-items: center;
 }
-.mobile-header__btn img { width: 22px; height: 22px; object-fit: contain; }
+.mobile-header__btn img { width: 20px; height: 20px; object-fit: contain; }
 
 .tabbar { display: none; }
 .tabbar__item {
@@ -538,18 +538,20 @@ button { font-family: inherit; cursor: pointer; }
         align-items: center;
         justify-content: space-between;
         gap: 12px;
-        height: 56px;
+        height: 48px;
     }
     .mobile-header .logo { font-size: 16px; letter-spacing: .18em; }
 
     .container { padding: 0 16px; }
-    .banner { padding: 12px 0; }
-    .banner__slide { flex: 0 0 100%; }
+    .banner .container { padding: 0 0 0 16px; }      /* убираем правый паддинг ради peek */
+    .banner { padding: 16px 0; }
+    .banner__slide { flex: 0 0 calc(100vw - 32px); } /* квадратный слайд 343 на viewport 375 */
+    .banner__track { gap: 8px; }
     .banner__slider, .banner__card { border-radius: 16px; }
-    .banner__dots { left: 50%; bottom: 8px; }
+    .banner__dots { left: calc((100vw - 32px) / 2); bottom: 8px; }   /* по центру слайда */
     .banner__content { max-width: 100%; padding: 24px; z-index: 3; }
     .banner__card { min-height: 340px; }
-    .banner__title { font-size: 37px; line-height: 32px; }
+    .banner__title { font-size: 32px; line-height: 32px; }
     .banner__bubble { top: 123px; left: 53px; right: auto; line-height: 20px; }
     .banner__character { width: 188px; height: auto; right: 0; top: 123px; bottom: auto; }
     .banner__cta { width: 100%; justify-content: center; }

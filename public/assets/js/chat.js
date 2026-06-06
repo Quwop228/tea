@@ -89,13 +89,13 @@
         var dots = dotsBox.querySelectorAll('button');
         if (slides.length < 2) return;
 
-        var GAP = 16;
         var idx = 0;
 
         function move(n) {
             idx = (n + slides.length) % slides.length;
             var slideW = slides[0].getBoundingClientRect().width;
             var sliderW = track.parentElement.getBoundingClientRect().width;
+            var GAP = parseFloat(getComputedStyle(track).gap) || 16;
             var step = slideW + GAP;
             var x;
             if (idx === slides.length - 1) {

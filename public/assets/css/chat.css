@@ -424,10 +424,19 @@
 
 @media (max-width: 760px) {
     .chat-side-character { display: none; }
-    .chat-header { padding: 12px 16px; }
+    .chat-header { padding: 24px 16px 0; border-bottom: none; }
 
     .chat-header__icon { display: none; }
-    .chat-header__close { border: none; padding: 8px; background: transparent; }
+    .chat-header__close {
+        width: 32px;
+        height: 32px;
+        padding: 0;
+        border: none;
+        border-radius: 8px;
+        background: #F4F4F4;
+        display: grid;
+        place-items: center;
+    }
     .chat-header__close-text { display: none; }
     .chat-header__close-x { display: inline; }
 
@@ -467,9 +476,12 @@
         width: 8px;
         border-radius: 999px;
         background: #D9D9D9;
+        transition: width .25s ease, background .25s ease;
     }
-    .chat-suggestions-dots span:nth-of-type(1) { width: 16px; background: #A4A4A5; }
-    .chat-suggestions-dots span:nth-of-type(4) { width: 6px; height: 6px; }
+    .chat-suggestions-dots span.is-active {
+        width: 16px;
+        background: #A4A4A5;
+    }
 
     .msg__bubble { max-width: 88%; }
 }

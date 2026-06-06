@@ -41,7 +41,7 @@ function e(string $value): string
         </button>
         <a class="logo" href="#"><img class="logo__text" src="assets/icons/logo.svg" alt="ART OF TEA"><img class="logo__leaf" src="assets/icons/leaf.svg" alt="" aria-hidden="true"></a>
         <button class="mobile-header__btn" type="button" aria-label="Поиск">
-            <img src="assets/icons/search.svg" alt="">
+            <img src="assets/icons/search-dark.svg" alt="">
         </button>
     </div>
 
